@@ -2,26 +2,24 @@ import random
 
 
 def main():
-    print("The game is started")
-
+    print("let's start the game")
+    attempts =10
     num = random.randint(1,99)
     score = 10
-    while True:     
-        users_number = input("Guess the number: ")
-        if users_number == 'exit':
-            
+    while attempts!= 0:     
+        input = input('guess the number')
+        
+        print(attempts)
+        if num>input:
+            print('too low')
+            attempts-=1
+        elif num<input :
+            print('too high')
+            attempts-=1
+        else :
             break
-        elif users_number== 'is the number even':
-            if num % 2 ==0 :
-                print('The number is even')
-            else:
-                print("the number is odd ")
-        elif num == users_number:
-            print("You won")
-            print(f'Your score {score}')
-        else: 
-            print("You lose")
-        score -= 1
+
+
         
 
     
@@ -38,5 +36,3 @@ def main():
 
 
 
-if __name__ == "__main__":
-    main()
